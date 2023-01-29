@@ -54,8 +54,6 @@ def setRandom():
 
 @app.route("/random")
 def Random():
-
-    
     debug =0
     from  pandas import DataFrame as df
     import pandas as pd                     # 引用套件並縮寫為 pd
@@ -192,7 +190,7 @@ def myEA():
     
     ##Example 2 ## write back mysql ###############
     ## make all status =0
-    c.execute('update sensors set status=0 where value>0')
+    c.execute('update sensors set status=0 where true')
     conn.commit()
     
     ## choose status ==1 have their id available
@@ -202,9 +200,9 @@ def myEA():
     for _id in id_list:
         #print('update light set status=1 where id=='+str(_id))
         c.execute('update sensors set status=1 where id='+str(_id))
-    
     conn.commit()
-    
+    c.execute('select * from sensors')
+
     if debug:
         input("pause ....update ok..........")
    
