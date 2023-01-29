@@ -3,12 +3,12 @@
 <head>
 	<!--<meta charset="UTF-8" http-equiv="refresh" content="5">-->
 
-	<title>Highcharts MyDemo 5/17 11:29 </title>
+	<title>Highcharts</title>
 	<!-- jQuery js -->	
-	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	
 	<!--include the highcharts library-->
-	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
 	
 	<!-- Bootstrap css and js -->
 	<link  rel= "stylesheet"  href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
@@ -62,14 +62,10 @@
 	}
 
 	
-	
 
-    
-    
-    
 	$(function () {
 		$.ajax({									  
-			url: '/getData',//連接的URL	  
+			url: 'GetData.php',//連接的URL	  
 			data: "{}",//夾帶的參數
 			dataType: 'json', //資料格式 
 			success: function(data)	//傳送成功的function
@@ -79,7 +75,7 @@
 					temps = [];
 					time = [];
 					
-					for (var i = ((data.length<50 ) ? 0 : data.length-50); i < data.length; i++)
+					for (var i =  0; i < data.length; i++)
 					{
 						if(parseInt(data[i][5])==0){
 							lights.push({y:parseInt(data[i][2]), color: '#FF0000' });
