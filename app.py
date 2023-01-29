@@ -12,7 +12,7 @@ dbUse='mysql' #default
 
 #######################################################
 if dbUse == 'postgresql': #in render.com
-    myserver ="dpg-cfb3l9g2i3mjdukrv63g-a"
+    myserver ="cfb3l9g2i3mjdukrv63g-a.singapore-postgres.render.com"
     myuser="aiot0_user"
     mypassword="EhRkyK3dlT2IHE1j0qJIvyXAMWMTNp4Q"
     mydb="aiot0"
