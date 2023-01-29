@@ -11,8 +11,6 @@ myuser="aektjzmbszhhtg"
 mypassword="EhRkyK3dlT2IHE1j0qJIvyXAMWMTNp4Q"
 mydb="aiot0"
 
-"
-
 
 @app.route("/data.json")
 def data():
