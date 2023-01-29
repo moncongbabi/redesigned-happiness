@@ -7,13 +7,13 @@
     * 註冊 Render.com, github 請下載 HeidiSQL, VS code
 
 ### step 1 : Clone this github
-* git clone https://github.com/huanchen1107/aiot0530-start-no-token 到 local\aiot0531 folder
+    * git clone https://github.com/huanchen1107/aiot0530-start-no-token 到 local\aiot0531 folder
     * 把local的 \aiot0531\.git 殺掉 (產生自己的git管理員) 方便建立新的git repository (cmd+shift＋.= can 
     show hidden files in mac)
-    * 推送至github 建立新的folder
-        $ git config --global user.name "John Doe"
-        $ git config --global user.email johndoe@example.com
-    https://github.com/huanchen1107/aiot-flask-renderCom
+    * 推送至github 建立新的folder 
+    * $ git config --global user.name "John Doe"
+    * $ git config --global user.email johndoe@example.com
+    * https://github.com/huanchen1107/aiot-flask-renderCom
 
 ### step 2 : install some package
 
