@@ -13,7 +13,7 @@
     * 推送至github 建立新的folder 
     * $ git config --global user.name "John Doe"
     * $ git config --global user.email johndoe@example.com
-    * https://github.com/huanchen1107/aiot-flask-renderCom
+    * https://github.com/huanchen1107/aiot-flask-render.com
 
 ### step 2 : install some package
 

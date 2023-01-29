@@ -30,6 +30,10 @@ def data():
 
 @app.route("/")
 def index():
+	return render_template('index.html')
+
+@app.route("/AI")
+def index():
 	return render_template('indexAI.html')
 
 @app.route("/noAI")
