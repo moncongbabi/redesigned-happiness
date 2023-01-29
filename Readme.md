@@ -4,7 +4,7 @@
 #### Author: Huan Chen 
 是
 ### step 0:
-    * 註冊 Render.com, github 請下載 HeidiSQL, VS code
+    * 註冊 Render.com, github 請下載 HeidiSQL(windows) Postico 2 (windows/mac/linux), VS code
 
 ### step 1 : Clone this github
     * git clone https://github.com/huanchen1107/aiot0530-start-no-token 到 local\aiot0531 folder
