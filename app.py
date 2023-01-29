@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 ##### Global variable ################################
 #dbUse='postgresql'
-dbUse='mysql' #default
+dbUse='postgresql' #default
 
 
 #######################################################
