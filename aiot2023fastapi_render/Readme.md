@@ -11,9 +11,9 @@
     * 把local的 \aiot0531\.git 殺掉 (產生自己的git管理員) 方便建立新的git repository (cmd+shift＋.= can 
     show hidden files in mac)
     * 推送至github 建立新的folder
-        $ git config --global user.name "John Doe"
-        $ git config --global user.email johndoe@example.com
-    https://github.com/huanchen1107/aiotRenderCom
+    ｜$ git config --global user.name "John Doe"  
+    ｜$ git config --global user.email johndoe@example.com
+    ｜https://github.com/huanchen1107/aiotRenderCom
 
 ### step 2 : install some package
 
