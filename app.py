@@ -4,7 +4,24 @@ from six.moves import urllib
 import json
  
 app = Flask(__name__)
- 
+
+##### Global variable ################################
+#dbUse='postgresql'
+dbUse='mysql' #default
+
+
+#######################################################
+if dbUse == 'postgresql': #in render.com
+    myserver ="dpg-cfb3l9g2i3mjdukrv63g-a"
+    myuser="aiot0_user"
+    mypassword="EhRkyK3dlT2IHE1j0qJIvyXAMWMTNp4Q"
+    mydb="aiot0"
+else:
+    myserver ="localhost"
+    myuser="test123"
+    mypassword="test123"
+    mydb="aiotdb"
+
 @app.route("/data.json")
 def data():
     timeInterval = 1000
@@ -37,27 +54,34 @@ def setRandom():
 
 @app.route("/random")
 def Random():
-    myserver ="localhost"
-    myuser="test123"
-    mypassword="test123"
-    mydb="aiotdb"
+
     
     debug =0
     from  pandas import DataFrame as df
     import pandas as pd                     # 引用套件並縮寫為 pd
     import numpy as np
-
-    import pymysql.cursors
+    
+    if dbUse=='postgresql':
+        import psycopg2
+    else:
+        import pymysql.cursors
     #db = mysql.connector.connect(host="140.120.15.45",user="toto321", passwd="12345678", db="lightdb")
     #conn = mysql.connector.connect(host=myserver,user=myuser, passwd=mypassword, db=mydb)
-    conn = pymysql.connect(host=myserver,user=myuser, passwd=mypassword, db=mydb)
+    
+    if dbUse =='postgresql':
+        conn=psycopg2.connect(f'host={myserver} user={myuser} password={mypassword} dbname={mydb}')
+    else:
+        conn = pymysql.connect(host=myserver,user=myuser, passwd=mypassword, db=mydb)
 
     c = conn.cursor()
     if debug:
         input("pause.. conn.cursor() ok.......")
 
     #====== 執行 MySQL 查詢指令 ======#
-    c.execute("update sensors set status=RAND() where true")
+    if dbUse =='postgresql':
+        c.execute("update sensors set status=RANDOM() where true")
+    else:
+        c.execute("update sensors set status=RAND() where true")
     conn.commit()
     
     c.execute("SELECT * FROM sensors")
@@ -94,10 +118,10 @@ def myEA():
     #from sqlalchemy import create_engine
     #import sqlalchemy
     
-    myserver ="localhost"
-    myuser="test123"
-    mypassword="test123"
-    mydb="aiotdb"
+    #myserver ="localhost"
+    #myuser="test123"
+    #mypassword="test123"
+    #mydb="aiotdb"
      
     #======= load model ============
     import pickle
@@ -109,13 +133,19 @@ def myEA():
        
     #print(my_score)
     
+    if dbUse=='postgresql':
+        import psycopg2
+    else:
+        import pymysql.cursors
     
-    
-    import pymysql.cursors
     #db = mysql.connector.connect(host="140.120.15.45",user="toto321", passwd="12345678", db="lightdb")
     #conn = mysql.connector.connect(host=myserver,user=myuser, passwd=mypassword, db=mydb)
-    conn = pymysql.connect(host=myserver,user=myuser, passwd=mypassword, db=mydb)
     
+    if dbUse =='postgresql':
+        conn=psycopg2.connect(f'host={myserver} user={myuser} password={mypassword} dbname={mydb}')
+    else:
+        conn = pymysql.connect(host=myserver,user=myuser, passwd=mypassword, db=mydb)
+
     c = conn.cursor()
     if debug:
         input("pause.. conn.cursor() ok.......")
