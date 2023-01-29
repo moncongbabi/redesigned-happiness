@@ -2,7 +2,7 @@ gunicorn
 Flask==2.0.1 
 Jinja2==3.0.1
 psycopg2
-sklearn
+scikit-learn
 pandas 
 numpy
 
