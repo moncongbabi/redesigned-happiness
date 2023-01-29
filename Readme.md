@@ -29,7 +29,7 @@ pip install gunicorn  Flask==2.0.1 Jinja2==3.0.1 psycopg2 sklearn pandas numpy
 * new an app
 * go to resource and add-on an Heroku postgredb
 
-### step 4: login to heroku pstgredb using HeidiSQL
+### step 4: login to heroku pstgredb using HeidiSQL or mysql workbvench
 
 
 ```sql
