@@ -3,6 +3,7 @@ import pandas as pd
 from six.moves import urllib
 import json
 import subprocess
+import base64
 app = Flask(__name__)
 
 def run_command(command):
